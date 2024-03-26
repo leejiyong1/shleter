@@ -4,4 +4,7 @@
     <select id="findAll" resultType="com.example.project.domain.User">
         SELECT * FROM users
     </select>
-</mapper>
+    <insert id="insertUser" parameterType="com.yourproject.domain.User">
+        INSERT INTO Users(name, email, password, contact)
+        VALUES(#{name}, #{email}, #{password}, #{contact})
+    </insert></mapper>

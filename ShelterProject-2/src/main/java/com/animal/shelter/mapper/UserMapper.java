@@ -1,23 +1,24 @@
 package com.animal.shelter.mapper;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import com.animal.shelter.vo.User;
+import com.animal.shelter.vo.SiteUser;
 
 @Mapper
 public interface UserMapper {
 	 @Select("SELECT * FROM users")
-	 List<User> findAll();
+	 List<SiteUser> findAll();
 	 
 	 @Insert("INSERT INTO Users(name, email, password, contact) VALUES(#{name}, #{email}, #{password}, #{contact})")
-	 int insertUser(User user);
+	 int insertUser(SiteUser user);
 	 
-	 @Select("SELECT * FROM users where userid = #{userId}")
-	 User findById(int userId);
+	 @Select("SELECT * FROM users where name = #{name}")
+	 Optional<SiteUser> findById(String name);
 	 
 	 
 }

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.project.mapper.UserMapper">
-    <select id="findAll" resultType="com.animal.shelter.vo.User">
+    <select id="findAll" resultType="com.animal.shelter.vo.SiteUser">
         SELECT * FROM users
     </select>
-    <insert id="insertUser" parameterType="com.animal.shelter.vo.User">
+    <insert id="insertUser" parameterType="com.animal.shelter.vo.SiteUser">
         INSERT INTO Users(name, email, password, contact)
         VALUES(#{name}, #{email}, #{password}, #{contact})
     </insert>
+    
+    <select id="findById" parameterType="String" resultType="com.animal.shelter.vo.SiteUser">
+    	SELECT * FROM users where name = #{name}
+    </select>
 </mapper>

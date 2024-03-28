@@ -1,4 +1,4 @@
-package com.animal.shelter;
+package com.animal.shelter.user;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -10,7 +10,7 @@ import lombok.Data;
 public class UserCreateForm {
     @Size(min = 3, max = 25)
     @NotEmpty(message = "사용자ID는 필수항목입니다.")
-    private String username;
+    private String name;
 
     @NotEmpty(message = "비밀번호는 필수항목입니다.")
     private String password1;

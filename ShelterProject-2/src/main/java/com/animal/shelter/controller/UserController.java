@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.animal.shelter.UserCreateForm;
 import com.animal.shelter.service.UserService;
+import com.animal.shelter.user.UserCreateForm;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -38,7 +38,7 @@ public class UserController {
         }
         
         try {
-        	userService.create(userCreateForm.getUsername(), 
+        	userService.create(userCreateForm.getName(), 
                     userCreateForm.getEmail(), userCreateForm.getPassword1(),userCreateForm.getContact());
         }catch(DataIntegrityViolationException e) {
             e.printStackTrace();

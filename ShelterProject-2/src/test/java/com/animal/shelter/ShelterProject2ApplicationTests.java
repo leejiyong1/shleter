@@ -51,4 +51,6 @@ class ShelterProject2ApplicationTests {
 //		SiteUser registeredUser = userMapper.findById(newUser.getUserID());
 //		assertTrue(passwordEncoder.matches("password123", registeredUser.getPassword()));
 //	}
+	
+	
 }
